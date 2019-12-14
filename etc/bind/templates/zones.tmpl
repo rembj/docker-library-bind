@@ -1,0 +1,10 @@
+key "${DNS_ZONE}." {
+  algorithm hmac-sha256;
+  secret "${DNS_KEY}";
+};
+
+zone "${DNS_ZONE}" {
+    type master;
+    file "/etc/bind/zones/${DNS_ZONE}.zone";
+    allow-update { key "${DNS_ZONE}."; };
+};

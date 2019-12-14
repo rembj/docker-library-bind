@@ -1,0 +1,11 @@
+$TTL 1d
+@ IN SOA ns.${DNS_ZONE}. root.${DNS_ZONE}. (
+        ${DNS_SERIAL}      ; serial
+        28800           ; refresh (8 hours)
+        7200            ; retry (2 hours)
+        2419200         ; expire (4 weeks)
+        86400           ; minimum (1 day)
+)
+
+@               IN      NS      ns.${DNS_ZONE}.
+ns              IN      A       ${DNS_NAMESERVER_IP}
